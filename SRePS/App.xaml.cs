@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace SRePS
-{///hey Corey, hey jake, hey sup
+{///hey Corey, hey jake, hey sup, hello from Alex, hello everyone
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
