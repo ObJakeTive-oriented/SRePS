@@ -26,5 +26,10 @@ namespace SRePS
         {
             this.InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = "Hello World";
+        }
     }
 }
