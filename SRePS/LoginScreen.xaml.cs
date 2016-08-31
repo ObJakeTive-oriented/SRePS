@@ -66,24 +66,22 @@ namespace SRePS
             //  log event
             //    }
 
-
-            //below: trying to print password string just to check it; don't think it'll work
-            //if (e.Key == Windows.System.VirtualKey.Enter)
-            //{
-            //    string a = passwordBox.Password;
-            //    int b;
-            //    if (Int32.TryParse(a, out b))
-            //    {
-            //        passwordInputTest.Text = b.ToString();
-            //    }
-            //    passwordInputTest.Text = a;
-            //}
+           // below: printing password; this is how we get it
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                string a = passwordBox.Password;
+                int b;
+                if (Int32.TryParse(a, out b))
+                {
+                    passwordInputTest.Text = b.ToString();
+                }
+                passwordInputTest.Text = a;
+            }
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             
-
         }
 
         private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
@@ -100,5 +98,6 @@ namespace SRePS
         {
 
         }
+
     }
 }
