@@ -29,7 +29,23 @@ namespace SRePS
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ResultTextBlock.Text = "Hello World";
+        }
+
+        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (passwordBox.Password == "Password" || passwordBox.Password == "password")
+            {
+                statusText.Text = "'Password' is not allowed as a password.";
+            }
+            else
+            {
+                statusText.Text = string.Empty;
+            }
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

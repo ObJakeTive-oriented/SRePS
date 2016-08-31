@@ -8,7 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="ClickButton" Content="Jake's Button" HorizontalAlignment="Left" Margin="788,301,0,0" VerticalAlignment="Top" Height="52" Width="207" FontSize="30" Click="button_Click"/>
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="864,566,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="79" Width="245" FontSize="48"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="816,575,0,0" VerticalAlignment="Top" Height="10" Width="297" PasswordChanged="passwordBox_PasswordChanged"/>
+        <TextBlock x:Name="statusText" HorizontalAlignment="Left" Margin="821,607,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="297"/>
+        <TextBlock x:Name="passwordBlock" HorizontalAlignment="Left" Margin="723,575,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="32" Width="93" RenderTransformOrigin="1.132,0.762" FontSize="20"/>
+        <TextBlock x:Name="SRePS" HorizontalAlignment="Left" Margin="821,192,0,0" TextWrapping="Wrap" Text="SRePS" VerticalAlignment="Top" FontSize="100"/>
+        <TextBox x:Name="usernameField" HorizontalAlignment="Left" Margin="816,533,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" TextChanged="textBox_TextChanged"/>
+        <TextBlock x:Name="usernameBlock" HorizontalAlignment="Left" Margin="713,533,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Height="32" Width="98" RenderTransformOrigin="1.132,0.762" FontSize="20"/>
     </Grid>
 </Page>
