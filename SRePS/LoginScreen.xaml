@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="SRePS.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SRePS"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="SRePS" HorizontalAlignment="Left" Margin="821,192,0,0" TextWrapping="Wrap" Text="SRePS" VerticalAlignment="Top" FontSize="100"/>
+        <TextBox x:Name="usernameField" HorizontalAlignment="Left" Margin="821,533,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297" TextChanged="textBox_TextChanged" KeyDown="usernameField_KeyDown"/>
+        <TextBlock x:Name="userNameBlock" HorizontalAlignment="Left" Margin="714,533,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Height="32" Width="94" RenderTransformOrigin="1.132,0.762" FontSize="20"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="821,575,0,0" VerticalAlignment="Top" Height="10" Width="297" PasswordChanged="passwordBox_PasswordChanged"/>
+        <TextBlock x:Name="statusText" HorizontalAlignment="Left" Margin="821,607,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="297"/>
+        <TextBlock x:Name="passwordBlock" HorizontalAlignment="Left" Margin="721,575,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Height="32" Width="95" RenderTransformOrigin="1.132,0.762" FontSize="20" SelectionChanged="passwordBlock_SelectionChanged"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="1280,520,0,0" TextWrapping="Wrap" Text="Input data:" VerticalAlignment="Top" Height="24" Width="127" SelectionChanged="textBlock_SelectionChanged_1" FontSize="16"/>
+        <TextBlock x:Name="userInputTest" HorizontalAlignment="Left" Margin="1280,549,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="516" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBlock x:Name="passwordInputTest" HorizontalAlignment="Left" Margin="1280,599,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="516" SelectionChanged="textBlock_SelectionChanged"/>
+    </Grid>
+</Page>
