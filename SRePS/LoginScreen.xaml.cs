@@ -55,6 +55,7 @@ namespace SRePS
             {
                 statusText.Text = string.Empty;
             }
+
         }
 
         private void passwordBox_KeyDown(object sender, KeyRoutedEventArgs e)
@@ -76,7 +77,18 @@ namespace SRePS
                     passwordInputTest.Text = b.ToString();
                 }
                 passwordInputTest.Text = a;
+                if (passwordBox.Password == "Jakebruh")
+                {
+                    Frame.Navigate(typeof(MainScreen));
+                }
+                else if(a == "")
+                {
+                    statusText.Text = "Incorrect password. The password is Jakebruh";
+                }
+
+
             }
+
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
