@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Xml;
+using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -21,17 +21,14 @@ namespace SRePS
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class LoginScreen : Page
     {
         List<UserClass> users = new List<UserClass>();
-        public MainPage()
+        public LoginScreen()
         {
             this.InitializeComponent();
             LoginParsing test = new LoginParsing();
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Users\Jake\Documents\Visual Studio 2015\Projects\SRePS\SRePS\test.xml");
-
-            users = test.UserList(doc);
+            users = test.LoginList();
         }
 
         private void usernameField_KeyDown(object sender, KeyRoutedEventArgs e)
