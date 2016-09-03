@@ -9,6 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="370,280,0,0" TextWrapping="Wrap" Text="Main page stuff here" VerticalAlignment="Top" FontSize="120"/>
+        <Button x:Name="button" Content="Log out" HorizontalAlignment="Left" Margin="370,561,0,0" VerticalAlignment="Top" Height="286" Width="1336" Click="button_Click" FontSize="130"/>
 
     </Grid>
 </Page>
