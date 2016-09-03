@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +23,15 @@ namespace SRePS
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        List<UserClass> users = new List<UserClass>();
         public MainPage()
         {
             this.InitializeComponent();
+            LoginParsing test = new LoginParsing();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"C:\Users\Jake\Documents\Visual Studio 2015\Projects\SRePS\SRePS\test.xml");
+
+            users = test.UserList(doc);
         }
 
         private void usernameField_KeyDown(object sender, KeyRoutedEventArgs e)
@@ -106,10 +113,14 @@ namespace SRePS
 
         }
 
-        private void textBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
+        private void textBlock1_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }
 
+        private void textBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
