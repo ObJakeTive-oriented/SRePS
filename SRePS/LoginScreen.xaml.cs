@@ -81,18 +81,26 @@ namespace SRePS
                     passwordInputTest.Text = b.ToString();
                 }
                 passwordInputTest.Text = a;
-                if (passwordBox.Password == "Jakebruh")
+                for (int i = 0; i < users.Count; i++)
                 {
-                    Frame.Navigate(typeof(MainScreen));
+                    UserClass userCheck = users[i];
+                    if (usernameField.Text == userCheck.user)
+                    {
+                        if (passwordBox.Password == userCheck.password)
+                        {
+                            Frame.Navigate(typeof(MainScreen));
+                        }
+                        //else
+                        //{
+                        //    statusText.Text = "Incorrect password"; //TODO: fix this logic
+                        //}
+                    }
+                    //else
+                    //{
+                    //    statusText.Text = "Incorrect username"; //TODO: fix this logic
+                    //}
                 }
-                else if(a == "")
-                {
-                    statusText.Text = "Incorrect password. The password is Jakebruh";
-                }
-
-
             }
-
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
