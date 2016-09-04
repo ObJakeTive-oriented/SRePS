@@ -8,8 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="370,280,0,0" TextWrapping="Wrap" Text="Main page stuff here" VerticalAlignment="Top" FontSize="120"/>
-        <Button x:Name="button" Content="Log out" HorizontalAlignment="Left" Margin="370,561,0,0" VerticalAlignment="Top" Height="286" Width="1336" Click="button_Click" FontSize="130"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="661,40,654,0" TextWrapping="Wrap" Text="Main Menu" VerticalAlignment="Top" FontSize="80"/>
+        <Button x:Name="button" Content="Log out" HorizontalAlignment="Left" Margin="242,858,0,0" VerticalAlignment="Top" Height="129" Width="1437" Click="button_Click" FontSize="50"/>
+        <Button x:Name="button_createSalesOrder" Content="Create Sales Order" HorizontalAlignment="Left" Margin="536,261,0,0" VerticalAlignment="Top" Height="105" Width="825" FontSize="50" Click="button_createSalesOrder_Click"/>
 
     </Grid>
 </Page>

@@ -30,7 +30,12 @@ namespace SRePS
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-                Frame.Navigate(typeof(LoginScreen));
+            Frame.Navigate(typeof(LoginScreen));
+        }
+
+        private void button_createSalesOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CreateSalesOrder));
         }
     }
 }
