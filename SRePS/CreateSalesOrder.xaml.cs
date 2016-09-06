@@ -68,6 +68,10 @@ namespace SRePS
             salesOrder.loadSalesOrders().Add(current_so);
             salesOrder.SaveSalesOrders();
         }
-        
+
+        private void button_returnToMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainScreen));
+        }
     }
 }
