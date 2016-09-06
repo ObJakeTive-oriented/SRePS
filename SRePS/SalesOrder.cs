@@ -8,14 +8,31 @@ using System.IO;
 
 namespace SRePS
 {
-    class SalesOrder
+    public class SalesOrder
     {
         private List<SalesOrderInfo> salesOrderList = new List<SalesOrderInfo>();
+
+        public SalesOrder()
+        {
+            loadSalesOrders();
+        }
+
+        public List<SalesOrderInfo> getSoList
+        {
+            get
+            {
+                return salesOrderList;
+            }
+            set
+            {
+                salesOrderList = value;
+            }
+        }
 
         public void SaveSalesOrders()
         {
             string output = "<?xml version=\"1.0\"?>\n<salesorderid>\n";
-            foreach (SalesOrderInfo so in salesOrderList)
+            foreach (SalesOrderInfo so in MainScreen.salesOrderList)
             {
                 output += "<salesorderid salesorderid=\"" + so.id + "\">\n";
                 output += "<user>"+so.user+"</user>\n<date>"+so.date+"</date>\n";
@@ -49,7 +66,7 @@ namespace SRePS
 
         public int GetCurrentId()
         {
-            loadSalesOrders();
+            
             int id = 0;
             foreach(SalesOrderInfo s in salesOrderList)
             {
@@ -63,7 +80,7 @@ namespace SRePS
         public List<SalesOrderInfo> loadSalesOrders()
         {
             salesOrderList = new List<SalesOrderInfo>();
-            XElement rootElement = XElement.Load("JessTest.xml");
+            XElement rootElement = XElement.Load("salesorder.xml");
             GetSalesOrders(0, rootElement);
             return salesOrderList;
         }

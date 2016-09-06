@@ -117,7 +117,7 @@ namespace SRePS
             current_so.user = user;
             current_so.date = date;
             current_so.total = running_total;
-            salesOrder.loadSalesOrders().Add(current_so);
+            MainScreen.salesOrderList.Add(current_so);
             salesOrder.SaveSalesOrders();
         }
 
@@ -140,5 +140,6 @@ namespace SRePS
         {
             Frame.Navigate(typeof(MainScreen));
         }
+        
     }
 }

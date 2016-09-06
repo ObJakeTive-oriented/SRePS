@@ -7,7 +7,7 @@ using System.IO;
 
 namespace SRePS
 {
-    class RetrieveItems
+    public class RetrieveItems
     {
         private List<StockItems> _itemsList = new List<StockItems>();
 
@@ -22,7 +22,7 @@ namespace SRePS
                 while(!reader.EndOfStream)
                 {
                     string[] iteminfo = reader.ReadLine().Split(' ');
-                    StockItems newitem = new StockItems(iteminfo[0], Convert.ToDouble(iteminfo[1]));
+                    StockItems newitem = new StockItems(iteminfo[0].ToLower(), Convert.ToDouble(iteminfo[1]));
                     _itemsList.Add(newitem);
                 }
             }
@@ -39,7 +39,7 @@ namespace SRePS
         }
     }
 
-    class StockItems
+    public class StockItems
     {
         public string item_name;
         public double item_price;
