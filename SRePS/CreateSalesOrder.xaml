@@ -23,7 +23,7 @@
         <TextBox x:Name="textbox_user" HorizontalAlignment="Left" Margin="268,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="325" FontSize="20" PlaceholderText="Enter user..."/>
         <TextBox x:Name="textbox_date" HorizontalAlignment="Left" Margin="645,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="325" FontSize="20" PlaceholderText="Enter date..."/>
         <Button x:Name="button_save" Content="SAVE" HorizontalAlignment="Left" Margin="965,846,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_save_Click"/>
-        <AutoSuggestBox HorizontalAlignment="Left" Margin="139,82,0,0" VerticalAlignment="Top" Width="287" AllowDrop="True" IsSuggestionListOpen="True"/>
+        <AutoSuggestBox QueryIcon="Find" HorizontalAlignment="Left" Margin="139,82,0,0" VerticalAlignment="Top" Width="287" AllowDrop="True" IsSuggestionListOpen="True" PlaceholderText="Search item here"/>
 
     </Grid>
 </Page>
