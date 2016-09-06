@@ -26,6 +26,16 @@ namespace SRePS
             this.InitializeComponent();
             int id = salesOrder.GetCurrentId();
             textbox_id.Text = id.ToString();
+            dropdown_user.Items.Add("");
+
+            LoginParsing loginparsing = new LoginParsing();
+            string[] userNames = loginparsing.userNames;
+            foreach(string s in userNames)
+            {
+                dropdown_user.Items.Add(s);
+            }
+
+            
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -58,7 +68,8 @@ namespace SRePS
 
         private void button_save_Click(object sender, RoutedEventArgs e)
         {
-            string user = textbox_user.Text;
+
+            string user = (string)dropdown_user.SelectedItem;
             string date = textbox_date.Text;
 
             current_so.user = user;

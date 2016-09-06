@@ -23,6 +23,7 @@
         <TextBox x:Name="textbox_user" HorizontalAlignment="Left" Margin="268,188,0,0" TextWrapping="Wrap" Text="Enter User..." VerticalAlignment="Top" Height="45" Width="325" FontSize="20"/>
         <TextBox x:Name="textbox_date" HorizontalAlignment="Left" Margin="645,188,0,0" TextWrapping="Wrap" Text="Enter Date..." VerticalAlignment="Top" Height="45" Width="325" FontSize="20"/>
         <Button x:Name="button_save" Content="SAVE" HorizontalAlignment="Left" Margin="965,846,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_save_Click"/>
+        <ComboBox x:Name="dropdown_user" HorizontalAlignment="Left" Margin="268,114,0,0" VerticalAlignment="Top" Width="325" Height="45" FontSize="20" PlaceholderText="Select User..."/>
 
     </Grid>
 </Page>

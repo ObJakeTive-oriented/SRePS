@@ -10,13 +10,25 @@ namespace SRePS
     public class LoginParsing
     {
         private List<UserClass> users = new List<UserClass>();
+        public string[] userNames;
 
-        public List<UserClass> LoginList()
+        public LoginParsing()
         {
             XElement rootElement = XElement.Load("test.xml");
 
             GetOutline(0, rootElement);
 
+            int count = 0;
+            userNames = new string[users.Count];
+            foreach (UserClass u in users)
+            {
+                userNames[count] = u.user;
+                count++;
+            }
+        }
+
+        public List<UserClass> LoginList()
+        {
             return users;
         }
 
