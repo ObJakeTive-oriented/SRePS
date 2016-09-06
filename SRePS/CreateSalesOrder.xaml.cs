@@ -9,6 +9,7 @@ using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using System.Text.RegularExpressions;
+using System.IO;
 
 // The Templated Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234235
 
@@ -21,6 +22,7 @@ namespace SRePS
         SalesOrderInfo current_so = new SalesOrderInfo();
         List<Items> _itemsList = new List<Items>();
         List<StockItems> _stockList = new List<StockItems>();
+        Backup _backup = new Backup();
 
         public double running_total = 0;
 
@@ -106,6 +108,19 @@ namespace SRePS
             current_so.total = running_total;
             salesOrder.loadSalesOrders().Add(current_so);
             salesOrder.SaveSalesOrders();
+        }
+
+        private void button_backup_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _backup.MakeBackup();
+                statusText.Text = "Successful backup";
+            }
+            catch
+            {
+                statusText.Text = "Unsuccessful backup";
+            }
         }
 
         private void button_returnToMenu_Click(object sender, RoutedEventArgs e)
