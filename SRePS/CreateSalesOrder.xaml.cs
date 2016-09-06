@@ -9,7 +9,6 @@ using Windows.UI.Xaml.Documents;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using System.Text.RegularExpressions;
-using System.IO;
 
 // The Templated Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234235
 
@@ -22,7 +21,7 @@ namespace SRePS
         SalesOrderInfo current_so = new SalesOrderInfo();
         List<Items> _itemsList = new List<Items>();
         List<StockItems> _stockList = new List<StockItems>();
-        Backup _backup = new Backup();
+        ErrorLogging errorObject = new ErrorLogging();
 
         public double running_total = 0;
 
@@ -73,19 +72,20 @@ namespace SRePS
 
         private void button_additem_Click(object sender, RoutedEventArgs e)
         {
+            try {
             string item_name = (string)dropdown_item.SelectedItem;
             string quantity = textbox_quantity.Text;
             string item_price = findItemPrice(item_name);
-            
+
             current_so.AddItem(item_name, Convert.ToDouble(quantity));
             running_total += (Convert.ToDouble(quantity) * Convert.ToDouble(item_price));
             int item_quantity;
-            if(int.TryParse(quantity, out item_quantity))
+            if (int.TryParse(quantity, out item_quantity))
             {
                 textbox_listitems.Text += item_name + "\n";
-                textbox_listunitprice.Text += "$"+item_price+ "\n";
+                textbox_listunitprice.Text += "$" + item_price + "\n";
                 textbox_listquantity.Text += item_quantity.ToString() + "\n";
-                textbox_total.Text = "$"+running_total.ToString();
+                textbox_total.Text = "$" + running_total.ToString();
             }
             else
             {
@@ -95,6 +95,16 @@ namespace SRePS
             dropdown_item.SelectedItem = "";
             textbox_quantity.Text = "";
             textbox_error.Text = "";
+        }
+            catch
+            {
+                string error = "Error in CreateSalesOrder.caml.cs - button_additem_Click";
+                errorObject.LogError(error);
+            }
+            finally
+            {
+                //what do I do in here?
+            }
         }
 
         private void button_save_Click(object sender, RoutedEventArgs e)
@@ -108,19 +118,6 @@ namespace SRePS
             current_so.total = running_total;
             salesOrder.loadSalesOrders().Add(current_so);
             salesOrder.SaveSalesOrders();
-        }
-
-        private void button_backup_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                _backup.MakeBackup();
-                statusText.Text = "Successful backup";
-            }
-            catch
-            {
-                statusText.Text = "Unsuccessful backup";
-            }
         }
 
         private void button_returnToMenu_Click(object sender, RoutedEventArgs e)
