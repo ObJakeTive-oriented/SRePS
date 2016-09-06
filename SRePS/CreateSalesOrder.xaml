@@ -21,6 +21,8 @@
         <TextBox x:Name="textbox_error" HorizontalAlignment="Left" Margin="398,342,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="475" FontSize="20" Background="#66FFFFFF"/>
         <TextBox x:Name="textbox_date" HorizontalAlignment="Left" Margin="645,188,0,0" TextWrapping="Wrap" Text="Enter Date..." VerticalAlignment="Top" Height="45" Width="325" FontSize="20"/>
         <Button x:Name="button_save" Content="SAVE" HorizontalAlignment="Left" Margin="934,905,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_save_Click"/>
+        <Button x:Name="button_backup" Content="BACKUP" HorizontalAlignment="Left" Margin="934,825,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_backup_Click"/>
+        <TextBlock x:Name="backupText" HorizontalAlignment="Left" Margin="934,865,0,0" VerticalAlignment="Top" Height="41" Width="132" TextWrapping="Wrap" Text="" />
         <ComboBox x:Name="dropdown_user" HorizontalAlignment="Left" Margin="268,188,0,0" VerticalAlignment="Top" Width="325" Height="45" FontSize="20" PlaceholderText="Select User..."/>
         <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="600,454,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="154" Height="40" FontSize="20" AcceptsReturn="True"/>
         <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="600,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="362" Width="154"/>

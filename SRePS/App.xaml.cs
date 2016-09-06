@@ -100,6 +100,10 @@ namespace SRePS
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+
+            Backup backup = new Backup();
+            backup.MakeBackup();
+
             deferral.Complete();
         }
     }
