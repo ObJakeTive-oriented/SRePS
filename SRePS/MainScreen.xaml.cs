@@ -22,15 +22,27 @@ namespace SRePS
     /// </summary>
     public sealed partial class MainScreen : Page
     {
+        public static List<SalesOrderInfo> salesOrderList = new List<SalesOrderInfo>();
+        public static SalesOrderInfo currentSalesOrder = null;
+        public static List<StockItems> stockItemsList = new List<StockItems>();
+
         public MainScreen()
         {
             this.InitializeComponent();
-
+            SalesOrder newSalesOrder = new SalesOrder();
+            salesOrderList = newSalesOrder.loadSalesOrders();
+            RetrieveItems getStockList = new RetrieveItems();
+            stockItemsList = getStockList.getList();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(LoginScreen));
+        }
+
+        private void button_editSalesOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(EditSalesOrder));
         }
 
         private void button_createSalesOrder_Click(object sender, RoutedEventArgs e)
