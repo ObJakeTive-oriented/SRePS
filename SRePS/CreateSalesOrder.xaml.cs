@@ -130,7 +130,9 @@ namespace SRePS
             }
             catch
             {
-                backupText.Text = "Unsuccesful backup";
+                string er = "Unsuccesful backup";
+                backupText.Text = er;
+                errorObject.LogError(er);
             }
         }
 
