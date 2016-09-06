@@ -81,6 +81,10 @@ namespace SRePS
                     passwordInputTest.Text = b.ToString();
                 }
                 passwordInputTest.Text = a;
+
+                int countUser = 0;
+                int countPass = 0;
+
                 for (int i = 0; i < users.Count; i++)
                 {
                     UserClass userCheck = users[i];
@@ -90,16 +94,35 @@ namespace SRePS
                         {
                             Frame.Navigate(typeof(MainScreen));
                         }
-                        //else
-                        //{
-                        //    statusText.Text = "Incorrect password"; //TODO: fix this logic
-                        //}
+                        else
+                        {
+                            ++countPass;
+                        }
                     }
-                    //else
-                    //{
-                    //    statusText.Text = "Incorrect username"; //TODO: fix this logic
-                    //}
+
+                    else
+                    {
+                        ++countUser;
+                    }
                 }
+
+                if (countUser == users.Count)
+                {
+                    if(countPass == 0)
+                    {
+                        statusText.Text = "Incorrect username and password";
+                    }
+                        
+                    else
+                    {
+                        statusText.Text = "Incorrect username";
+                    }  
+                }
+                    
+                else if (countPass == 1)
+                {
+                    statusText.Text = "Incorrect password";
+                }     
             }
         }
 
