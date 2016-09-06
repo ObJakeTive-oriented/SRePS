@@ -22,6 +22,7 @@ namespace SRePS
         List<Items> _itemsList = new List<Items>();
         List<StockItems> _stockList = new List<StockItems>();
         ErrorLogging errorObject = new ErrorLogging();
+        Backup _backup = new Backup();
 
         public double running_total = 0;
 
@@ -118,6 +119,19 @@ namespace SRePS
             current_so.total = running_total;
             salesOrder.loadSalesOrders().Add(current_so);
             salesOrder.SaveSalesOrders();
+        }
+
+        private void button_backup_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _backup.MakeBackup();
+                backupText.Text = "Successful backup";
+            }
+            catch
+            {
+                backupText.Text = "Unsuccesful backup";
+            }
         }
 
         private void button_returnToMenu_Click(object sender, RoutedEventArgs e)
