@@ -19,14 +19,19 @@ namespace SRePS
         //List<SalesOrderInfo> LoadedSalesOrders = new List<SalesOrderInfo>();
         SalesOrder salesOrder = new SalesOrder();
         SalesOrderInfo current_so = new SalesOrderInfo();
+        List<Items> _itemsList = new List<Items>();
+        List<StockItems> _stockList = new List<StockItems>();
+
         public double running_total = 0;
 
         public CreateSalesOrder()
         {
             this.InitializeComponent();
             int id = salesOrder.GetCurrentId();
+            current_so.id = id.ToString();
             textbox_id.Text = id.ToString();
             dropdown_user.Items.Add("");
+            dropdown_item.Items.Add("");
 
             LoginParsing loginparsing = new LoginParsing();
             string[] userNames = loginparsing.userNames;
@@ -35,7 +40,13 @@ namespace SRePS
                 dropdown_user.Items.Add(s);
             }
 
-            
+            RetrieveItems getitems = new RetrieveItems();
+            _stockList = getitems.getList();
+            foreach(StockItems i in _stockList)
+            {
+                dropdown_item.Items.Add(i.item_name);
+            }
+
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,39 +54,56 @@ namespace SRePS
 
         }
 
+        private string findItemPrice(string itemName)
+        {
+            double price = 0;
+            foreach(StockItems i in _stockList)
+            {
+                if(i.item_name == itemName)
+                {
+                    price = i.item_price;
+                    break;
+                }
+            }
+
+            return price.ToString();
+        }
+
         private void button_additem_Click(object sender, RoutedEventArgs e)
         {
-            string item_name = textbox_item.Text;
+            string item_name = (string)dropdown_item.SelectedItem;
             string quantity = textbox_quantity.Text;
+            string item_price = findItemPrice(item_name);
             
             current_so.AddItem(item_name, Convert.ToDouble(quantity));
-            running_total += Convert.ToDouble(quantity);
+            running_total += (Convert.ToDouble(quantity) * Convert.ToDouble(item_price));
             int item_quantity;
             if(int.TryParse(quantity, out item_quantity))
             {
                 textbox_listitems.Text += item_name + "\n";
+                textbox_listunitprice.Text += "$"+item_price+ "\n";
                 textbox_listquantity.Text += item_quantity.ToString() + "\n";
+                textbox_total.Text = "$"+running_total.ToString();
             }
             else
             {
                 textbox_error.Text = "Please enter a number into the quantity field!";
                 return;
             }
-            textbox_item.Text = "";
+            dropdown_item.SelectedItem = "";
             textbox_quantity.Text = "";
             textbox_error.Text = "";
         }
 
         private void button_save_Click(object sender, RoutedEventArgs e)
         {
-
+            
             string user = (string)dropdown_user.SelectedItem;
             string date = textbox_date.Text;
 
             current_so.user = user;
             current_so.date = date;
             current_so.total = running_total;
-            current_so.id = 6.ToString();
             salesOrder.loadSalesOrders().Add(current_so);
             salesOrder.SaveSalesOrders();
         }

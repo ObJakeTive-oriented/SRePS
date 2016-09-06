@@ -135,11 +135,7 @@ namespace SRePS
         {
 
         }
-
-        private void passwordBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void textBlock1_SelectionChanged(object sender, RoutedEventArgs e)
         {

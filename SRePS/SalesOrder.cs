@@ -49,6 +49,7 @@ namespace SRePS
 
         public int GetCurrentId()
         {
+            loadSalesOrders();
             int id = 0;
             foreach(SalesOrderInfo s in salesOrderList)
             {
@@ -61,6 +62,7 @@ namespace SRePS
 
         public List<SalesOrderInfo> loadSalesOrders()
         {
+            salesOrderList = new List<SalesOrderInfo>();
             XElement rootElement = XElement.Load("JessTest.xml");
             GetSalesOrders(0, rootElement);
             return salesOrderList;
