@@ -140,6 +140,5 @@ namespace SRePS
         {
             Frame.Navigate(typeof(MainScreen));
         }
-        
     }
 }

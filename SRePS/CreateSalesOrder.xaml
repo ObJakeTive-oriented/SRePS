@@ -10,25 +10,25 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="button_returnToMenu" Content="Return" HorizontalAlignment="Left" Margin="58,905,0,0" VerticalAlignment="Top" Height="64" Width="234" FontSize="30" Click="button_returnToMenu_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="600,64,0,0" TextWrapping="Wrap" Text="Sales Order #" VerticalAlignment="Top" Height="79" Width="263" FontSize="40"/>
-        <TextBox x:Name="textbox_id" HorizontalAlignment="Left" Margin="868,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="79" FontSize="40" Width="148"/>
-        <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="193,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="362" Width="385"/>
-        <TextBox x:Name="label_items" HorizontalAlignment="Left" Margin="193,454,0,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Width="385" Height="40" FontSize="20"/>
-        <TextBox x:Name="label_quantity" HorizontalAlignment="Left" Margin="770,454,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top" Width="154" Height="40" FontSize="20"/>
-        <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="770,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="362" Width="154"/>
-        <TextBox x:Name="textbox_quantity" HorizontalAlignment="Left" Margin="732,287,0,0" TextWrapping="Wrap" Text="Qty" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
-        <Button x:Name="button_additem" Content="Add Item" HorizontalAlignment="Left" Margin="934,287,0,0" VerticalAlignment="Top" Height="45" Width="195" Click="button_additem_Click" FontSize="20"/>
-        <TextBox x:Name="textbox_error" HorizontalAlignment="Left" Margin="398,342,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="475" FontSize="20" Background="#66FFFFFF"/>
-        <TextBox x:Name="textbox_date" HorizontalAlignment="Left" Margin="645,188,0,0" TextWrapping="Wrap" Text="Enter Date..." VerticalAlignment="Top" Height="45" Width="325" FontSize="20"/>
-        <Button x:Name="button_save" Content="SAVE" HorizontalAlignment="Left" Margin="934,905,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_save_Click"/>
-        <Button x:Name="button_backup" Content="BACKUP" HorizontalAlignment="Left" Margin="934,825,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_backup_Click"/>
+        <TextBox x:Name="textbox_id" HorizontalAlignment="Left" Margin="867,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="79" FontSize="40" Width="148"/>
+        <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="192,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="257" Width="385"/>
+        <TextBox x:Name="label_items" HorizontalAlignment="Left" Margin="192,335,0,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Width="385" Height="40" FontSize="20"/>
+        <TextBox x:Name="label_quantity" HorizontalAlignment="Left" Margin="769,335,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top" Width="154" Height="40" FontSize="20"/>
+        <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="769,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="257" Width="154"/>
+        <TextBox x:Name="textbox_quantity" HorizontalAlignment="Left" Margin="730,222,0,0" TextWrapping="Wrap" PlaceholderText="Qty" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
+        <Button x:Name="button_additem" Content="Add Item" HorizontalAlignment="Left" Margin="932,222,0,0" VerticalAlignment="Top" Height="45" Width="195" Click="button_additem_Click" FontSize="20"/>
+        <TextBox x:Name="textbox_error" HorizontalAlignment="Left" Margin="396,277,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="475" FontSize="20" Background="#66FFFFFF"/>
+        <TextBox x:Name="textbox_date" HorizontalAlignment="Left" Margin="642,146,0,0" TextWrapping="Wrap" PlaceholderText="Enter date..." VerticalAlignment="Top" Height="45" Width="325" FontSize="20"/>
+        <Button x:Name="button_save" Content="SAVE" HorizontalAlignment="Left" Margin="935,600,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_save_Click"/>
+        <Button x:Name="button_backup" Content="BACKUP" HorizontalAlignment="Left" Margin="1104,600,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_backup_Click"/>
         <TextBlock x:Name="backupText" HorizontalAlignment="Left" Margin="934,865,0,0" VerticalAlignment="Top" Height="41" Width="132" TextWrapping="Wrap" Text="" />
-        <ComboBox x:Name="dropdown_user" HorizontalAlignment="Left" Margin="268,188,0,0" VerticalAlignment="Top" Width="325" Height="45" FontSize="20" PlaceholderText="Select User..."/>
-        <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="600,454,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="154" Height="40" FontSize="20" AcceptsReturn="True"/>
-        <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="600,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="362" Width="154"/>
-        <ComboBox x:Name="dropdown_item" HorizontalAlignment="Left" Margin="214,287,0,0" VerticalAlignment="Top" Width="475" Height="45" FontSize="20" PlaceholderText="Select Item..."/>
-        <TextBox x:Name="textbox_total" HorizontalAlignment="Left" Margin="770,905,0,0" TextWrapping="Wrap" Text="$0" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
-        <TextBox x:Name="label_total" HorizontalAlignment="Left" Margin="683,905,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="71" Height="45" FontSize="20" TextAlignment="Left"/>
+        <ComboBox x:Name="dropdown_user" HorizontalAlignment="Left" Margin="265,146,0,0" VerticalAlignment="Top" Width="325" Height="45" FontSize="20" PlaceholderText="Select User..."/>
+        <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="599,335,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="154" Height="40" FontSize="20" AcceptsReturn="True"/>
+        <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="599,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="257" Width="154"/>
+        <ComboBox x:Name="dropdown_item" HorizontalAlignment="Left" Margin="212,222,0,0" VerticalAlignment="Top" Width="475" Height="45" FontSize="20" PlaceholderText="Select Item..."/>
+        <TextBox x:Name="textbox_total" HorizontalAlignment="Left" Margin="769,658,0,0" TextWrapping="Wrap" Text="$0" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
+        <TextBox x:Name="label_total" HorizontalAlignment="Left" Margin="683,658,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="71" Height="45" FontSize="20" TextAlignment="Left"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="492,36,0,0" TextWrapping="Wrap" Text="Sales Order #" VerticalAlignment="Top" FontSize="60"/>
 
     </Grid>
 </Page>

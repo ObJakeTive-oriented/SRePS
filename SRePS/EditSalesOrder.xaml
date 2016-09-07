@@ -13,16 +13,16 @@
         <ComboBox x:Name="dropdown_items" HorizontalAlignment="Left" Margin="286,278,0,0" VerticalAlignment="Top" Width="325" Height="45" FontSize="20" PlaceholderText="Select Item..."/>
         <Button x:Name="button_edit" Content="Click to edit existing item" HorizontalAlignment="Left" Margin="422,200,0,0" VerticalAlignment="Top" Width="262" Height="44" FontSize="20" Click="button_edit_Click"/>
         <Button x:Name="button_add" Content="Click to add item" HorizontalAlignment="Left" Margin="779,200,0,0" VerticalAlignment="Top" Width="262" Height="44" FontSize="20" Click="button_add_Click"/>
-        <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="193,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="362" Width="385"/>
+        <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="193,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="189" Width="385"/>
         <TextBox x:Name="label_items" HorizontalAlignment="Left" Margin="193,454,0,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Width="385" Height="40" FontSize="20"/>
         <TextBox x:Name="label_quantity" HorizontalAlignment="Left" Margin="770,454,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top" Width="154" Height="40" FontSize="20"/>
-        <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="770,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="362" Width="154"/>
+        <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="770,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="189" Width="154"/>
         <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="600,454,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="154" Height="40" FontSize="20" AcceptsReturn="True"/>
-        <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="600,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="362" Width="154"/>
+        <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="600,521,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="189" Width="154"/>
         <TextBox x:Name="textbox_total" HorizontalAlignment="Left" Margin="770,905,0,0" TextWrapping="Wrap" Text="$0" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
         <TextBox x:Name="label_total" HorizontalAlignment="Left" Margin="683,905,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="71" Height="45" FontSize="20" TextAlignment="Left"/>
         <TextBox x:Name="label_titletable" HorizontalAlignment="Left" Margin="336,387,0,0" TextWrapping="Wrap" Text="Current Sales Order" VerticalAlignment="Top" Width="385" Height="45" FontSize="25" TextAlignment="Center"/>
-        <TextBox x:Name="textbox_quantity" HorizontalAlignment="Left" Margin="644,278,0,0" TextWrapping="Wrap" Text="Qty" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
+        <TextBox x:Name="textbox_quantity" HorizontalAlignment="Left" Margin="644,278,0,0" TextWrapping="Wrap" PlaceholderText="Qty" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
         <Button x:Name="button_makechange" Content="" HorizontalAlignment="Left" Margin="846,278,0,0" VerticalAlignment="Top" Height="45" Width="195" FontSize="20" Click="button_makechange_Click"/>
         <Button x:Name="button_returnToMenu" Content="Return" HorizontalAlignment="Left" Margin="58,905,0,0" VerticalAlignment="Top" Height="64" Width="234" FontSize="30" Click="button_returnToMenu_Click"/>
 
