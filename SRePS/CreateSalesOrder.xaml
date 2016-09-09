@@ -18,7 +18,7 @@
         <TextBox x:Name="textbox_quantity" HorizontalAlignment="Left" Margin="730,222,0,0" TextWrapping="Wrap" PlaceholderText="Qty" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
         <Button x:Name="button_additem" Content="Add Item" HorizontalAlignment="Left" Margin="932,222,0,0" VerticalAlignment="Top" Height="45" Width="195" Click="button_additem_Click" FontSize="20"/>
         <TextBox x:Name="textbox_error" HorizontalAlignment="Left" Margin="396,277,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45" Width="475" FontSize="20" Background="#66FFFFFF"/>
-        <TextBox x:Name="textbox_date" HorizontalAlignment="Left" Margin="642,146,0,0" TextWrapping="Wrap" PlaceholderText="Enter date..." VerticalAlignment="Top" Height="45" Width="325" FontSize="20"/>
+        <!--<TextBox x:Name="textbox_date" HorizontalAlignment="Left" Margin="642,146,0,0" TextWrapping="Wrap" PlaceholderText="Enter date..." VerticalAlignment="Top" Height="45" Width="325" FontSize="20"/>-->
         <Button x:Name="button_save" Content="SAVE" HorizontalAlignment="Left" Margin="935,600,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_save_Click"/>
         <Button x:Name="button_backup" Content="BACKUP" HorizontalAlignment="Left" Margin="1104,600,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_backup_Click"/>
         <TextBlock x:Name="backupText" HorizontalAlignment="Left" Margin="934,865,0,0" VerticalAlignment="Top" Height="41" Width="132" TextWrapping="Wrap" Text="" />

@@ -112,7 +112,7 @@ namespace SRePS
         {
             
             string user = (string)dropdown_user.SelectedItem;
-            string date = textbox_date.Text;
+            string date = DateTime.Now.ToString();
 
             current_so.user = user;
             current_so.date = date;
