@@ -40,11 +40,11 @@ namespace SRePS
 
         public double ReturnPrice(string name)
         {
-            foreach (var StockItems in _itemsList)
+            foreach (var item in _itemsList)
             {
-                if (name == StockItems.item_name)
+                if (name == item.item_name)
                 {
-                    return StockItems.item_price;
+                    return item.item_price;
                 }
             }
             return 0;

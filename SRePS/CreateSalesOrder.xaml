@@ -22,13 +22,14 @@
         <Button x:Name="button_save" Content="SAVE" HorizontalAlignment="Left" Margin="935,600,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_save_Click"/>
         <Button x:Name="button_backup" Content="BACKUP" HorizontalAlignment="Left" Margin="1104,600,0,0" VerticalAlignment="Top" Height="41" Width="132" Click="button_backup_Click"/>
         <TextBlock x:Name="backupText" HorizontalAlignment="Left" Margin="934,865,0,0" VerticalAlignment="Top" Height="41" Width="132" TextWrapping="Wrap" Text="" />
-        <ComboBox x:Name="dropdown_user" HorizontalAlignment="Left" Margin="265,146,0,0" VerticalAlignment="Top" Width="325" Height="45" FontSize="20" PlaceholderText="Select User..."/>
+        <!--<ComboBox x:Name="dropdown_user" HorizontalAlignment="Left" Margin="265,146,0,0" VerticalAlignment="Top" Width="325" Height="45" FontSize="20" PlaceholderText="Select User..." SelectionChanged="dropdown_user_SelectionChanged"/>-->
         <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="599,335,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="154" Height="40" FontSize="20" AcceptsReturn="True"/>
         <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="599,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="257" Width="154"/>
         <ComboBox x:Name="dropdown_item" HorizontalAlignment="Left" Margin="212,222,0,0" VerticalAlignment="Top" Width="475" Height="45" FontSize="20" PlaceholderText="Select Item..."/>
         <TextBox x:Name="textbox_total" HorizontalAlignment="Left" Margin="769,658,0,0" TextWrapping="Wrap" Text="$0" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
         <TextBox x:Name="label_total" HorizontalAlignment="Left" Margin="683,658,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="71" Height="45" FontSize="20" TextAlignment="Left"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="492,36,0,0" TextWrapping="Wrap" Text="Sales Order #" VerticalAlignment="Top" FontSize="60"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="25,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18"/>
 
     </Grid>
 </Page>

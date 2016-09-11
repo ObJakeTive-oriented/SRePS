@@ -29,18 +29,19 @@ namespace SRePS
         public CreateSalesOrder()
         {
             this.InitializeComponent();
+            textBlock1.Text = "Signed in as: " + Globals.currentUser;
             int id = salesOrder.GetCurrentId();
             current_so.id = id.ToString();
             textbox_id.Text = id.ToString();
-            dropdown_user.Items.Add("");
+            //dropdown_user.Items.Add("");
             dropdown_item.Items.Add("");
 
             LoginParsing loginparsing = new LoginParsing();
-            string[] userNames = loginparsing.userNames;
-            foreach(string s in userNames)
-            {
-                dropdown_user.Items.Add(s);
-            }
+            //string[] userNames = loginparsing.userNames;
+            //foreach(string s in userNames)
+            //{
+            //    dropdown_user.Items.Add(s);
+            //}
 
             RetrieveItems getitems = new RetrieveItems();
             _stockList = getitems.getList();
@@ -110,10 +111,10 @@ namespace SRePS
         private void button_save_Click(object sender, RoutedEventArgs e)
         {
             
-            string user = (string)dropdown_user.SelectedItem;
+            //string user = (string)dropdown_user.SelectedItem;
             string date = DateTime.Now.ToString();
 
-            current_so.user = user;
+            current_so.user = Globals.currentUser;
             current_so.date = date;
             current_so.total = running_total;
             MainScreen.salesOrderList.Add(current_so);
@@ -138,6 +139,11 @@ namespace SRePS
         private void button_returnToMenu_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainScreen));
+        }
+
+        private void dropdown_user_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

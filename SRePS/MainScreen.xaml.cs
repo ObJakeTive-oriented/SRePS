@@ -29,11 +29,19 @@ namespace SRePS
         public MainScreen()
         {
             this.InitializeComponent();
+            textBlock1.Text = "Logged in as: " + Globals.currentUser;
             SalesOrder newSalesOrder = new SalesOrder();
             salesOrderList = newSalesOrder.loadSalesOrders();
             RetrieveItems getStockList = new RetrieveItems();
             stockItemsList = getStockList.getList();
         }
+
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+        //    _user = e.Parameter as string;
+
+        //    textBlock1.Text = "Logged in as: " + _user;
+        //}
 
         private void button_Click(object sender, RoutedEventArgs e)
         {

@@ -18,9 +18,10 @@ using Windows.UI.Xaml.Navigation;
 
 namespace SRePS
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    public static class Globals
+    {
+        public static string currentUser { get; set; }
+    }
     public sealed partial class LoginScreen : Page
     {
         List<UserClass> users = new List<UserClass>();
@@ -64,14 +65,6 @@ namespace SRePS
 
         private void passwordBox_KeyDown(object sender, KeyRoutedEventArgs e)
         {
-
-            //do stuff here to check if password is correct, like this:
-            //if (passwordBox.Password == "whatever the password is") {
-            //  move onto the main menu page
-            //  log event
-            //    }
-
-           // below: printing password; this is how we get it
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
                 string a = passwordBox.Password;
@@ -92,6 +85,9 @@ namespace SRePS
                     {
                         if (passwordBox.Password == userCheck.password)
                         {
+                            //NextPageArguments passedArgs = new NextPageArguments();
+                            //passedArgs.user = usernameField.Text;
+                            Globals.currentUser = usernameField.Text;
                             Frame.Navigate(typeof(MainScreen));
                         }
                         else
@@ -125,6 +121,12 @@ namespace SRePS
                 }     
             }
         }
+
+        public class NextPageArguments
+        {
+            public string user { get; set; }
+        }
+
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
