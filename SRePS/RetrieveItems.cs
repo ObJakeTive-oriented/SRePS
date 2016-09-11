@@ -15,14 +15,14 @@ namespace SRePS
         {
             StreamReader reader;
             FileStream fs = new FileStream(@"items.txt", FileMode.Open, FileAccess.Read);
-           // File.SetAttributes("salesorder.xml", FileAttributes.Normal);
+            // File.SetAttributes("salesorder.xml", FileAttributes.Normal);
             reader = new StreamReader(fs);
             try
             {
-                while(!reader.EndOfStream)
+                while (!reader.EndOfStream)
                 {
                     string[] iteminfo = reader.ReadLine().Split(' ');
-                    StockItems newitem = new StockItems(iteminfo[0].ToLower(), Convert.ToDouble(iteminfo[1]));
+                    StockItems newitem = new StockItems { item_name = iteminfo[0].ToLower(), item_price = Convert.ToDouble(iteminfo[1]) };
                     _itemsList.Add(newitem);
                 }
             }
@@ -30,24 +30,30 @@ namespace SRePS
             {
                 reader.Dispose();
             }
-            
+
         }
 
         public List<StockItems> getList()
         {
             return _itemsList;
         }
-    }
 
-    public class StockItems
-    {
-        public string item_name;
-        public double item_price;
-
-        public StockItems(string name, double price)
+        public double ReturnPrice(string name)
         {
-            item_name = name;
-            item_price = price;
+            foreach (var StockItems in _itemsList)
+            {
+                if (name == StockItems.item_name)
+                {
+                    return StockItems.item_price;
+                }
+            }
+            return 0;
         }
     }
 }
+
+        public class StockItems
+        {
+            public string item_name { get; set; }
+            public double item_price { get; set; }
+        }

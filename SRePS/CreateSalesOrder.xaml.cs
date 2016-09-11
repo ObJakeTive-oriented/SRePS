@@ -67,7 +67,6 @@ namespace SRePS
                     break;
                 }
             }
-
             return price.ToString();
         }
 

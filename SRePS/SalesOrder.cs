@@ -42,7 +42,8 @@ namespace SRePS
                     itemid++;
                     output += "<item item=\"" + itemid.ToString() + "\">\n";
                     output += "<item>" + item.item_name + "</item>\n";
-                    output += "<price>" + item.item_quantity + "</price>\n";
+                    //output += "<price>" + MainScreen.stockItemsList.(itemid.ToString()).ToString();
+                    output += "<quantity>" + item.item_quantity + "</quantity>\n";
                     output += "</item>\n";
                 }                                  
                 output += "<total>" + so.total + "</total>\n";
@@ -115,9 +116,9 @@ namespace SRePS
             if (element.Attribute("item") != null)
             {
                 string itemName = (string)element.Element("item");
-                double itemPrice = (double)element.Element("price");
+                double quantity = (double)element.Element("quantity");
 
-                salesOrder.AddItem(itemName, itemPrice);
+                salesOrder.AddItem(itemName, quantity);
             }
 
             foreach (XElement childElement in element.Elements())
