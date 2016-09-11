@@ -22,6 +22,7 @@ namespace SRePS
     {
         public static string currentUser { get; set; }
     }
+
     public sealed partial class LoginScreen : Page
     {
         List<UserClass> users = new List<UserClass>();
