@@ -26,6 +26,7 @@ namespace SRePS
     public sealed partial class LoginScreen : Page
     {
         List<UserClass> users = new List<UserClass>();
+        UserLogging userLog = new UserLogging();
         public LoginScreen()
         {
             this.InitializeComponent();
@@ -86,9 +87,9 @@ namespace SRePS
                     {
                         if (passwordBox.Password == userCheck.password)
                         {
-                            //NextPageArguments passedArgs = new NextPageArguments();
-                            //passedArgs.user = usernameField.Text;
                             Globals.currentUser = usernameField.Text;
+                            string ul = "Successful login as " + Globals.currentUser;
+                            userLog.Log(ul);
                             Frame.Navigate(typeof(MainScreen));
                         }
                         else

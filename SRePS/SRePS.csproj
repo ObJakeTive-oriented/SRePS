@@ -102,7 +102,7 @@
     <Compile Include="EditSalesOrder.xaml.cs">
       <DependentUpon>EditSalesOrder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ErrorLogging.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>

@@ -23,6 +23,7 @@ namespace SRePS
         List<StockItems> _stockList = new List<StockItems>();
         ErrorLogging errorObject = new ErrorLogging();
         Backup _backup = new Backup();
+        
 
         public double running_total = 0;
 
@@ -100,7 +101,7 @@ namespace SRePS
             catch
             {
                 string error = "Error in CreateSalesOrder.caml.cs - button_additem_Click";
-                errorObject.LogError(error);
+                errorObject.Log(error);
             }
             finally
             {
@@ -132,7 +133,7 @@ namespace SRePS
             {
                 string er = "Unsuccesful backup";
                 backupText.Text = er;
-                errorObject.LogError(er);
+                errorObject.Log(er);
             }
         }
 
