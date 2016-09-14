@@ -24,6 +24,7 @@ namespace SRePS
     {
         private SalesOrderInfo currentSO = new SalesOrderInfo();
         private string currentMode;
+        UserLogging userLog = new UserLogging();
 
         public EditSalesOrder()
         {

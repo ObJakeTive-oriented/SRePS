@@ -40,6 +40,7 @@ namespace SRePS
             StreamWriter writer = new StreamWriter(fs);
             try
             {
+                writer.WriteLine("User: " + Globals.currentUser);
                 writer.WriteLine("Message: " + interactionString);
                 writer.WriteLine("Date: " + DateTime.Now.ToString());
                 writer.WriteLine("-----------------------------------------------------------------------------" + Environment.NewLine);

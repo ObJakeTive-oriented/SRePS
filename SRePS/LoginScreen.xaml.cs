@@ -88,7 +88,7 @@ namespace SRePS
                         if (passwordBox.Password == userCheck.password)
                         {
                             Globals.currentUser = usernameField.Text;
-                            string ul = "Successful login as " + Globals.currentUser;
+                            string ul = "Successful login";
                             userLog.Log(ul);
                             Frame.Navigate(typeof(MainScreen));
                         }
@@ -97,7 +97,6 @@ namespace SRePS
                             ++countPass;
                         }
                     }
-
                     else
                     {
                         ++countUser;

@@ -10,20 +10,17 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using System.Text.RegularExpressions;
 
-// The Templated Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234235
-
 namespace SRePS
 {
     public sealed partial class CreateSalesOrder : Page
     {
-        //List<SalesOrderInfo> LoadedSalesOrders = new List<SalesOrderInfo>();
         SalesOrder salesOrder = new SalesOrder();
         SalesOrderInfo current_so = new SalesOrderInfo();
         List<Items> _itemsList = new List<Items>();
         List<StockItems> _stockList = new List<StockItems>();
         ErrorLogging errorObject = new ErrorLogging();
+        UserLogging userLog = new UserLogging();
         Backup _backup = new Backup();
-        
 
         public double running_total = 0;
 
@@ -88,7 +85,9 @@ namespace SRePS
                 textbox_listunitprice.Text += "$" + item_price + "\n";
                 textbox_listquantity.Text += item_quantity.ToString() + "\n";
                 textbox_total.Text = "$" + running_total.ToString();
-            }
+                string ul = "Added item: " + item_name;
+                userLog.Log(ul);
+                }
             else
             {
                 textbox_error.Text = "Please enter a number into the quantity field!";
@@ -120,6 +119,8 @@ namespace SRePS
             current_so.total = running_total;
             MainScreen.salesOrderList.Add(current_so);
             salesOrder.SaveSalesOrders();
+            string ul = "Added sales order #? TODO work out how to add sales number here";
+            userLog.Log(ul); 
         }
 
         private void button_backup_Click(object sender, RoutedEventArgs e)
@@ -128,17 +129,23 @@ namespace SRePS
             {
                 _backup.MakeBackup();
                 backupText.Text = "Successful backup";
+                string ul = "Prompted backup that was successful";
+                userLog.Log(ul);
             }
             catch
             {
                 string er = "Unsuccesful backup";
                 backupText.Text = er;
                 errorObject.Log(er);
+                string ul = "Prompted backup that was unsuccessful";
+                userLog.Log(ul);
             }
         }
 
         private void button_returnToMenu_Click(object sender, RoutedEventArgs e)
         {
+            string ul = "Returned to main screen";
+            userLog.Log(ul);
             Frame.Navigate(typeof(MainScreen));
         }
 

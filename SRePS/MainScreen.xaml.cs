@@ -13,48 +13,43 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace SRePS
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainScreen : Page
     {
         public static List<SalesOrderInfo> salesOrderList = new List<SalesOrderInfo>();
         public static SalesOrderInfo currentSalesOrder = null;
         public static List<StockItems> stockItemsList = new List<StockItems>();
+        UserLogging userLog = new UserLogging();
 
         public MainScreen()
         {
             this.InitializeComponent();
-            textBlock1.Text = "Logged in as: " + Globals.currentUser;
+            textBlock1.Text = "Signed in as: " + Globals.currentUser;
             SalesOrder newSalesOrder = new SalesOrder();
             salesOrderList = newSalesOrder.loadSalesOrders();
             RetrieveItems getStockList = new RetrieveItems();
             stockItemsList = getStockList.getList();
         }
 
-        //protected override void OnNavigatedTo(NavigationEventArgs e)
-        //{
-        //    _user = e.Parameter as string;
-
-        //    textBlock1.Text = "Logged in as: " + _user;
-        //}
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            string ul = "Logged out";
+            userLog.Log(ul);
             Frame.Navigate(typeof(LoginScreen));
         }
 
         private void button_editSalesOrder_Click(object sender, RoutedEventArgs e)
         {
+            string ul = "Navigated to Edit Sales Order";
+            userLog.Log(ul);
             Frame.Navigate(typeof(EditSalesOrder));
         }
 
         private void button_createSalesOrder_Click(object sender, RoutedEventArgs e)
         {
+            string ul = "Navigated to Create Sales Order";
+            userLog.Log(ul);
             Frame.Navigate(typeof(CreateSalesOrder));
         }
     }
