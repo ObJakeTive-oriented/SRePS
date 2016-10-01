@@ -149,6 +149,8 @@ namespace SRePS
                     {
                         if(i.item_name == itemName)
                         {
+                            string ul = "Edited quantity of6" + itemName;
+                            userLog.Log(ul);
                             i.item_quantity = Convert.ToDouble(quantity);
                             break;
                         }
@@ -167,6 +169,8 @@ namespace SRePS
             SalesOrder tempSoObj = new SalesOrder();
             tempSoObj.getSoList = MainScreen.salesOrderList;
             tempSoObj.SaveSalesOrders();
+            string ul = "Return to Main Screen";
+            userLog.Log(ul);
             Frame.Navigate(typeof(MainScreen));
         }
     }

@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Printing;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 namespace SRePS
 {
@@ -51,6 +49,11 @@ namespace SRePS
             string ul = "Navigated to Create Sales Order";
             userLog.Log(ul);
             Frame.Navigate(typeof(CreateSalesOrder));
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PageToPrint));
         }
     }
 }

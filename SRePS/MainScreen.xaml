@@ -13,6 +13,8 @@
         <Button x:Name="button_createSalesOrder" Content="Create Sales Order" HorizontalAlignment="Left" Margin="255,131,0,0" VerticalAlignment="Top" Height="105" Width="825" FontSize="50" Click="button_createSalesOrder_Click"/>
         <Button x:Name="button_editSalesOrder" Content="Edit Sales Order" HorizontalAlignment="Left" Margin="255,272,0,0" VerticalAlignment="Top" Height="105" Width="825" FontSize="50" Click="button_editSalesOrder_Click"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="60,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="30"/>
-
+        <!--<Button x:Name="InvokePrintingButton" Content="Print" Click="OnPrintButtonClick" Margin="29,28,0,660"/>-->
+        <Button x:Name="button1" Content="Print Sales report" HorizontalAlignment="Left" Margin="255,425,0,0" VerticalAlignment="Top" Height="95" Width="805" Click="button1_Click"/>
     </Grid>
+
 </Page>
