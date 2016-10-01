@@ -17,8 +17,6 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Printing;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace SRePS
 {
     /// <summary>
@@ -33,6 +31,10 @@ namespace SRePS
         public PageToPrint()
         {
             this.InitializeComponent();
+            string report = "Line 1\n" + "Line 2\n" + "Line 3\n" + 
+                            "Line 1\n" + "Line 2\n" + "Line 3\n" +
+                            "See where this is going Jess? Just keep adding lines\nTo text boxes and I can print them ^-^";
+            textBlock.Text = report;
         }
 
         #region Register for printing
@@ -117,7 +119,7 @@ namespace SRePS
         private void GetPreviewPage(object sender, GetPreviewPageEventArgs e)
         {
             // Provide a UIElement as the print preview.
-            printDoc.SetPreviewPage(e.PageNumber, this.textBox);
+            printDoc.SetPreviewPage(e.PageNumber, this.textBlock);
         }
 
         #endregion
@@ -126,7 +128,7 @@ namespace SRePS
 
         private void AddPages(object sender, AddPagesEventArgs e)
         {
-            printDoc.AddPage(this.textBox);
+            printDoc.AddPage(this.textBlock);
 
             // Indicate that all of the print pages have been provided
             printDoc.AddPagesComplete();
@@ -153,6 +155,9 @@ namespace SRePS
                 });
             }
         }
+
         #endregion
+
+        
     }
 }

@@ -20,7 +20,7 @@
                 <ImageBrush ImageSource="Assets/img.jpg" />
             </Rectangle.Fill>
         </Rectangle>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="435,275,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="145,60,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="215" Width="340" SelectionChanged="textBlock_SelectionChanged"/>
 
     </Grid>
 </Page>
