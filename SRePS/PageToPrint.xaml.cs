@@ -33,7 +33,6 @@ namespace SRePS
         {
             this.InitializeComponent();
             button_print.Content = "Print";
-            
         }
 
         #region Register for printing
@@ -49,6 +48,7 @@ namespace SRePS
             printDoc.Paginate += Paginate;
             printDoc.GetPreviewPage += GetPreviewPage;
             printDoc.AddPages += AddPages;
+             
         }
 
 #endregion
@@ -259,6 +259,10 @@ namespace SRePS
 
         private void button_return_Click(object sender, RoutedEventArgs e)
         {
+            printMan.PrintTaskRequested -= PrintTaskRequested;
+            printDoc.Paginate -= Paginate;
+            printDoc.GetPreviewPage -= GetPreviewPage;
+            printDoc.AddPages -= AddPages;
             Frame.Navigate(typeof(MainScreen));
         }
     }
