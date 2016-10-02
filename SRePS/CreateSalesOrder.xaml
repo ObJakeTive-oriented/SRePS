@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="button_returnToMenu" Content="Return" HorizontalAlignment="Left" Margin="58,905,0,0" VerticalAlignment="Top" Height="64" Width="234" FontSize="30" Click="button_returnToMenu_Click"/>
+        <Button x:Name="button_returnToMenu" Content="Return" HorizontalAlignment="Left" Margin="46,669,0,0" VerticalAlignment="Top" Height="64" Width="234" FontSize="30" Click="button_returnToMenu_Click"/>
         <TextBox x:Name="textbox_id" HorizontalAlignment="Left" Margin="867,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="79" FontSize="40" Width="148"/>
         <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="192,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="257" Width="385"/>
         <TextBox x:Name="label_items" HorizontalAlignment="Left" Margin="192,335,0,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Width="385" Height="40" FontSize="20"/>

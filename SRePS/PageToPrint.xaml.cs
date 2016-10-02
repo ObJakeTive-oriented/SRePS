@@ -27,14 +27,13 @@ namespace SRePS
         private PrintManager printMan;
         private PrintDocument printDoc;
         private IPrintDocumentSource printDocSource;
+        List<SalesOrderInfo> salesOrderList = new List<SalesOrderInfo>();
 
         public PageToPrint()
         {
             this.InitializeComponent();
-            string report = "Line 1\n" + "Line 2\n" + "Line 3\n" + 
-                            "Line 1\n" + "Line 2\n" + "Line 3\n" +
-                            "See where this is going Jess? Just keep adding lines\nTo text boxes and I can print them ^-^";
-            textBlock.Text = report;
+            button_print.Content = "Print";
+            
         }
 
         #region Register for printing
@@ -119,7 +118,7 @@ namespace SRePS
         private void GetPreviewPage(object sender, GetPreviewPageEventArgs e)
         {
             // Provide a UIElement as the print preview.
-            printDoc.SetPreviewPage(e.PageNumber, this.textBlock);
+            printDoc.SetPreviewPage(e.PageNumber, this.ElementGrid);
         }
 
         #endregion
@@ -128,7 +127,7 @@ namespace SRePS
 
         private void AddPages(object sender, AddPagesEventArgs e)
         {
-            printDoc.AddPage(this.textBlock);
+            printDoc.AddPage(this);
 
             // Indicate that all of the print pages have been provided
             printDoc.AddPagesComplete();
@@ -158,9 +157,109 @@ namespace SRePS
 
         #endregion
 
-        private void textBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        private void dateFrom_CalendarViewDayItemChanging(CalendarView sender, CalendarViewDayItemChangingEventArgs e)
         {
+            
+            
+        }
 
+        private void dateFrom_DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
+        {
+            if (!dateTo.Date.HasValue)
+            {
+                return;
+            }
+
+            GenerateReport(dateFrom.Date.Value, dateTo.Date.Value);
+           /* DateTime to = dateTo.Date;
+            DateTime from = dateFrom.Date.;
+
+            string dateTime = "10/28/2016 1:52:12 PM";
+            DateTime tempDate = Convert.ToDateTime(dateTime);
+            if (from > tempDate)
+            {
+                textbox_listitems.Text = "From is greater than to";
+            }
+            else
+                textbox_listitems.Text = "TO is greater than FROM";*/
+        }
+
+        private void dateTo_DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
+        {
+            DateTimeOffset from = dateFrom.Date.Value;
+            if(!dateFrom.Date.HasValue)
+            {
+                return;
+            }
+            GenerateReport(dateFrom.Date.Value, dateTo.Date.Value);
+        }
+
+        private void GenerateReport(DateTimeOffset from, DateTimeOffset to)
+        {
+            textbox_listitems.Text = "";
+            textbox_listquantity.Text = "";
+            textbox_listunitprice.Text = "";
+            outputRevenue.Text = "";
+            outputTotalItems.Text = "";
+
+            SalesOrder salesOrder = new SalesOrder();
+            salesOrderList = salesOrder.loadSalesOrders();
+            List<SalesOrderInfo> tempList = new List<SalesOrderInfo>();
+            DateTime temp;
+            foreach(SalesOrderInfo so in salesOrderList)
+            {
+                temp = Convert.ToDateTime(so.date);
+                if ((temp >= from) && (temp <= to))
+                    tempList.Add(so);
+            }
+            
+            List<Items> items = new List<Items>();
+            foreach(SalesOrderInfo info in tempList)
+            {
+                foreach(Items i in info.items)
+                {
+                    Items tempItem = findItem(items, i);
+                    if(tempItem == null)
+                    {
+                        items.Add(i);
+                    }
+                    else
+                    {
+                        tempItem.item_quantity += i.item_quantity;
+                    }
+                }
+            }
+            RetrieveItems stockListClass = new RetrieveItems();
+            double revenue = 0;
+            double totalItems = 0;
+            foreach (Items a in items)
+            {
+                
+                double quantity = a.item_quantity;
+                double price = stockListClass.ReturnPrice(a.item_name);
+                textbox_listitems.Text += a.item_name + "\n";
+                textbox_listunitprice.Text += "$"+price + "\n";
+                textbox_listquantity.Text += quantity + "\n";
+                totalItems += quantity;
+                revenue += (price * quantity);
+            }
+            outputRevenue.Text = "$"+revenue.ToString();
+            outputTotalItems.Text = totalItems.ToString();
+        }
+
+        private Items findItem(List<Items> i, Items item)
+        {
+            foreach(Items x in i)
+            {
+                if (x.item_name == item.item_name)
+                    return x;
+            }
+            return null;
+        }
+
+        private void button_return_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainScreen));
         }
     }
 }
