@@ -19,18 +19,24 @@ namespace SRePS
             reader = new StreamReader(fs);
             try
             {
+                string[] iteminfo;
                 while (!reader.EndOfStream)
                 {
-                    string[] iteminfo = reader.ReadLine().Split(' ');
-                    StockItems newitem = new StockItems { item_name = iteminfo[0].ToLower(), item_price = Convert.ToDouble(iteminfo[1]) };
-                    _itemsList.Add(newitem);
+                        iteminfo = reader.ReadLine().Split(' ');
+                        StockItems newitem = new StockItems
+                        {
+                            item_name = iteminfo[0].ToLower(),
+                            item_price = Convert.ToDouble(iteminfo[1]),
+                            item_stock = Convert.ToInt32(iteminfo[2]),
+                            item_stock_threshold = Convert.ToInt32(iteminfo[3])
+                        };
+                        _itemsList.Add(newitem);
                 }
             }
             finally
             {
                 reader.Dispose();
             }
-
         }
 
         public List<StockItems> getList()
@@ -56,4 +62,6 @@ namespace SRePS
         {
             public string item_name { get; set; }
             public double item_price { get; set; }
+            public int item_stock_threshold { get; set; }
+            public int item_stock { get; set; }
         }

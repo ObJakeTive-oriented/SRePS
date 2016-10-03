@@ -118,7 +118,7 @@ namespace SRePS
             current_so.date = date;
             current_so.total = running_total;
             MainScreen.salesOrderList.Add(current_so);
-            salesOrder.SaveSalesOrders();
+            textboxNotification.Text = salesOrder.SaveSalesOrders();
             string ul = "Added sales order #? TODO work out how to add sales number here";
             userLog.Log(ul); 
         }

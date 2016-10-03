@@ -30,6 +30,6 @@
         <TextBox x:Name="label_total" HorizontalAlignment="Left" Margin="683,658,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="71" Height="45" FontSize="20" TextAlignment="Left"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="492,36,0,0" TextWrapping="Wrap" Text="Sales Order #" VerticalAlignment="Top" FontSize="60"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="25,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18"/>
-
+        <TextBlock x:Name="textboxNotification" HorizontalAlignment="Left" Margin="934,450,0,0" VerticalAlignment="Top" Height="100" Width="300" TextWrapping="Wrap" />
     </Grid>
 </Page>
