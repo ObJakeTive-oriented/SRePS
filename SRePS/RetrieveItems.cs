@@ -55,6 +55,43 @@ namespace SRePS
             }
             return 0;
         }
+
+        public int ReturnStockLevel(string name)
+        {
+            foreach (var item in _itemsList)
+            {
+                if (name == item.item_name)
+                {
+                    return item.item_stock;
+                }
+            }
+            return 0;
+        }
+
+        public void UpdateStock(string name, int sold)
+        {
+            foreach (var item in _itemsList)
+            {
+                if (name == item.item_name)
+                {
+                    item.item_stock = item.item_stock - sold;
+                    return;
+                }
+            }
+            return;
+        }
+
+        public int ReturnThresh(string name)
+        {
+            foreach (var item in _itemsList)
+            {
+                if (name == item.item_name)
+                {
+                    return item.item_stock_threshold;
+                }
+            }
+            return 0;
+        }
     }
 }
 

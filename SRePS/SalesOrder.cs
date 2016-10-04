@@ -28,19 +28,16 @@ namespace SRePS
                 salesOrderList = value;
             }
         }
-    
-        public string SaveSalesOrders()
-        {
-            string notification = "";
 
+        public void SaveSalesOrders()
+        {
             string output = "<?xml version=\"1.0\"?>\n<salesorderid>\n";
             foreach (SalesOrderInfo so in MainScreen.salesOrderList)
             {
                 output += "<salesorderid salesorderid=\"" + so.id + "\">\n";
-                output += "<user>"+so.user+"</user>\n<date>"+so.date+"</date>\n";
+                output += "<user>" + so.user + "</user>\n<date>" + so.date + "</date>\n";
                 int itemid = 0;
-
-                foreach(Items item in so.items)
+                foreach (Items item in so.items)
                 {
                     itemid++;
                     output += "<item item=\"" + itemid.ToString() + "\">\n";
@@ -49,62 +46,36 @@ namespace SRePS
                     output += "<quantity>" + item.item_quantity + "</quantity>\n";
                     output += "</item>\n";
                 }
-
-                foreach(Items item in so.items)
-                {
-                    StreamWriter writer;
-                    FileStream fs = new FileStream(@"items.txt", FileMode.Open, FileAccess.Write);
-                    // File.SetAttributes("salesorder.xml", FileAttributes.Normal);
-                    writer = new StreamWriter(fs);
-
-                    foreach (StockItems s in MainScreen.stockItemsList)
-                    {
-                        if (s.item_name == item.item_name)
-                        {
-                            if(s.item_stock - Convert.ToInt32(item.item_quantity) < 0)
-                            {
-                                //ALERT USER NOT THAT THERE IS NOT ENOUGH STOCK FOR CURRENT SALE ORDER
-                                notification += "NOT ENOUGH " + s.item_name + " IN STOCK FOR SALE. Current stock level for " + s.item_name + ": " + s.item_stock + "\n";
-                                writer.Dispose();
-                                return notification;
-                            }
-
-                            s.item_stock -= Convert.ToInt32(item.item_quantity);
-                            writer.WriteLine(s.item_name + " " + s.item_price + " " + s.item_stock + " " + s.item_stock_threshold);
-
-                            if (s.item_stock < s.item_stock_threshold)
-                            {
-                                //ALERT USER WITH NOTIFICATION THAT STOCK IS LOW
-                                notification += "LOW STOCK FOR " + s.item_name + ". Current stock level for " + s.item_name + ": " + s.item_stock + "\n";
-                            }
-                            
-                        }
-                        else
-                        {
-                            writer.WriteLine(s.item_name + " " + s.item_price + " " + s.item_stock + " " + s.item_stock_threshold);
-                        }
-                        
-                    }
-                    writer.Dispose();
-                }
                 output += "<total>" + so.total + "</total>\n";
-                output += "</salesorderid>\n";   
+                output += "</salesorderid>\n";
             }
             output += "</salesorderid>";
-            return notification; 
+
+            StreamWriter writer;
+            FileStream fs = new FileStream(@"salesorder.xml", FileMode.Create, FileAccess.ReadWrite);
+            File.SetAttributes("salesorder.xml", FileAttributes.Normal);
+            writer = new StreamWriter(fs);
+            try
+            {
+                writer.Write(output);
+            }
+            finally
+            {
+                writer.Dispose();
+            }
         }
 
         public int GetCurrentId()
         {
-            
+
             int id = 0;
-            foreach(SalesOrderInfo s in salesOrderList)
+            foreach (SalesOrderInfo s in salesOrderList)
             {
                 int s_id = Convert.ToInt32(s.id);
                 if (s_id > id)
                     id = s_id;
             }
-            return id+1;
+            return id + 1;
         }
 
         public List<SalesOrderInfo> loadSalesOrders()
@@ -157,6 +128,24 @@ namespace SRePS
             return;
         }
 
+        public void UpdateStockText(RetrieveItems s, string item_name, int sold)
+        { 
+                //StreamWriter writer;
+                //FileStream fs = new FileStream(@"items.txt", FileMode.Open, FileAccess.Write);
+                //writer = new StreamWriter(fs);
+
+                //foreach (StockItems s in MainScreen.stockItemsList)
+                //{
+                //    if (s.item_name == item.item_name)
+                //    {
+                //        if (s.item_stock - Convert.ToInt32(item.item_quantity) < 0)
+                //        {
+                //            writer.Dispose();
+                //        }
+                //        writer.WriteLine(item_name + " " + s.item_price + " " + s.item_stock + " " + s.item_stock_threshold);
+                //}
+                //writer.Dispose();
+        }
     }
 
     public class SalesOrderInfo
@@ -172,7 +161,7 @@ namespace SRePS
             Items _item = new Items(item, quantity);
             items.Add(_item);
         }
-        
+
     }
 
     public class Items
@@ -186,5 +175,5 @@ namespace SRePS
             item_quantity = quantity;
         }
     }
-    
+
 }
