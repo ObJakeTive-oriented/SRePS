@@ -107,7 +107,7 @@ namespace SRePS
             }
             catch
             {
-                string error = "Error in CreateSalesOrder.caml.cs - button_additem_Click";
+                string error = "Error in CreateSalesOrder.xaml.cs - button_additem_Click";
                 errorObject.Log(error);
             }
             finally

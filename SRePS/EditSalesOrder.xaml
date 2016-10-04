@@ -25,6 +25,6 @@
         <TextBox x:Name="textbox_quantity" HorizontalAlignment="Left" Margin="568,195,0,0" TextWrapping="Wrap" PlaceholderText="Qty" VerticalAlignment="Top" Width="154" Height="45" FontSize="20"/>
         <Button x:Name="button_makechange" Content="" HorizontalAlignment="Left" Margin="770,195,0,0" VerticalAlignment="Top" Height="45" Width="195" FontSize="20" Click="button_makechange_Click"/>
         <Button x:Name="button_returnToMenu" Content="Return" HorizontalAlignment="Left" Margin="30,646,0,0" VerticalAlignment="Top" Height="64" Width="234" FontSize="30" Click="button_returnToMenu_Click"/>
-
+        <TextBlock x:Name="textboxNotification" HorizontalAlignment="Left" Margin="934,450,0,0" VerticalAlignment="Top" Height="100" Width="300" TextWrapping="Wrap" />
     </Grid>
 </Page>

@@ -25,6 +25,9 @@ namespace SRePS
         private SalesOrderInfo currentSO = new SalesOrderInfo();
         private string currentMode;
         UserLogging userLog = new UserLogging();
+        RetrieveItems getitems = new RetrieveItems();
+        ErrorLogging errorObject = new ErrorLogging();
+        SalesOrder salesOrder = new SalesOrder();
 
         public EditSalesOrder()
         {
@@ -141,8 +144,9 @@ namespace SRePS
         {
             string itemName = (string)dropdown_items.SelectedItem;
             string quantity = textbox_quantity.Text;
+            int oldQuantity = 0;
 
-            switch(currentMode)
+            switch (currentMode)
             {
                 case "edit":
                     foreach(Items i in currentSO.items)
@@ -151,6 +155,7 @@ namespace SRePS
                         {
                             string ul = "Edited quantity of6" + itemName;
                             userLog.Log(ul);
+                            oldQuantity = Convert.ToInt32(i.item_quantity);
                             i.item_quantity = Convert.ToDouble(quantity);
                             break;
                         }
@@ -162,6 +167,45 @@ namespace SRePS
                     break;
             }
             refreshTable();
+
+            try
+            {
+                int i = getitems.ReturnStockLevel(itemName) - Convert.ToInt32(quantity);
+                int newQuantity = Convert.ToInt32(quantity);
+
+                if (oldQuantity > newQuantity)
+                {
+                    getitems.UpdateStock(itemName, newQuantity - oldQuantity);
+                }
+                else if (oldQuantity < newQuantity)
+                {
+                    if(i >= 0) //if stock level will be zero or above after sale, go ahead with it
+                    {
+                        getitems.UpdateStock(itemName, newQuantity - oldQuantity);
+                    }
+                    else
+                    {
+                        textboxNotification.Text = "Cannot edit " + itemName + " as stock will be negative.\nIt's current stock: " + getitems.ReturnStockLevel(itemName);
+                    }
+                }
+                else if (oldQuantity == newQuantity)
+                {
+                    textboxNotification.Text = "To edit stock for " + itemName + " please enter a value other than its current stock level: " + getitems.ReturnStockLevel(itemName);
+                    return;
+                }
+
+                if (getitems.ReturnStockLevel(itemName) < getitems.ReturnThresh(itemName))
+                {
+                    textboxNotification.Text = itemName + " is below threshold\nIt's current stock: " + getitems.ReturnStockLevel(itemName);
+                }
+
+                salesOrder.UpdateStockText(getitems);
+            }
+            catch
+            {
+                string error = "Error in EditSalesOrder.xaml.cs - button_makechange_Click";
+                errorObject.Log(error);
+            }
         }
 
         private void button_returnToMenu_Click(object sender, RoutedEventArgs e)
