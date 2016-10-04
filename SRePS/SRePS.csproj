@@ -113,6 +113,9 @@
     <Compile Include="PageToPrint.xaml.cs">
       <DependentUpon>PageToPrint.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageToPrintLowStock.xaml.cs">
+      <DependentUpon>PageToPrintLowStock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetrieveItems.cs" />
     <Compile Include="SalesOrder.cs" />
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageToPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageToPrintLowStock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="SRePS.PageToPrintLowStock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SRePS"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="ElementGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="206,36,0,0" TextWrapping="Wrap" Text="Low Stock Report" VerticalAlignment="Top" FontSize="60" Height="80" Width="471"/>
+        <TextBox x:Name="textPaymentSummary" HorizontalAlignment="Left" Margin="10,126,0,0" TextWrapping="Wrap" Text="Item Threshold" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Height="35" Width="186"/>
+        <TextBox x:Name="txt_Quantity" HorizontalAlignment="Left" Margin="176,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Height="35" Width="118" PlaceholderText="Quantity"/>
+        <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="36,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="351"/>
+        <TextBox x:Name="label_items" HorizontalAlignment="Left" Margin="36,209,0,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Width="351" Height="40" FontSize="20"/>
+        <TextBox x:Name="label_quantity" HorizontalAlignment="Left" Margin="443,209,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top" Width="141" Height="40" FontSize="20"/>
+        <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="443,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="141"/>
+        <TextBox x:Name="outputTotalItems" HorizontalAlignment="Left" Margin="562,805,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" PlaceholderText="" Height="32" Width="64"/>
+        <Button x:Name="btn_Generate" Content="Generate" HorizontalAlignment="Left" Margin="324,128,0,0" VerticalAlignment="Top" Click="btn_Generate_Click"/>
+        <Button x:Name="btn_Print" Content="Print" HorizontalAlignment="Left" Margin="443,128,0,0" VerticalAlignment="Top" Click="btn_Print_Click"/>
+
+    </Grid>
+</Page>

@@ -9,31 +9,32 @@
 
     <Grid x:Name="ElementGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,-145">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="81*"/>
-            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="368*"/>
+            <ColumnDefinition Width="235*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button x:Name="button_print" Content="Button" HorizontalAlignment="Left" Margin="37,778,0,-174" Grid.Row="1" VerticalAlignment="Top" Click="PrintButtonClick" FontSize="30" Grid.Column="1" Height="0" Width="110"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="206,36,0,0" TextWrapping="Wrap" Text="Sales Report" VerticalAlignment="Top" FontSize="60" Height="80" Width="327"/>
-        <TextBox x:Name="textPaymentSummary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Payment Summary:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="35" Width="186"/>
-        <TextBox x:Name="textPaymentSummary_Copy" HorizontalAlignment="Left" Margin="330,13,0,0" TextWrapping="Wrap" Text="to" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="35" Width="64"/>
-        <CalendarDatePicker x:Name="dateFrom" HorizontalAlignment="Left" Margin="211,13,0,0" Grid.Row="1" VerticalAlignment="Top" PlaceholderText="from" FontSize="20" CalendarViewDayItemChanging="dateFrom_CalendarViewDayItemChanging" DateChanged="dateFrom_DateChanged" Height="32" Width="76"/>
-        <CalendarDatePicker x:Name="dateTo" HorizontalAlignment="Left" Margin="384,13,0,0" Grid.Row="1" VerticalAlignment="Top" PlaceholderText="to" DateChanged="dateTo_DateChanged" Height="32" Width="58"/>
-        <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="36,160,0,-58" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="351" Grid.Row="1"/>
-        <TextBox x:Name="label_items" HorizontalAlignment="Left" Margin="36,93,0,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Width="351" Height="40" FontSize="20" Grid.Row="1"/>
-        <TextBox x:Name="label_quantity" HorizontalAlignment="Left" Margin="562,93,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top" Width="141" Height="40" FontSize="20" Grid.Row="1"/>
-        <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="562,160,0,-58" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="141" Grid.Row="1"/>
-        <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="407,93,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="141" Height="40" FontSize="20" AcceptsReturn="True" Grid.Row="1"/>
-        <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="407,160,0,-58" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="141" Grid.Row="1"/>
-        <Button x:Name="button_return" Content="Return" HorizontalAlignment="Left" Margin="36,778,0,-174" Grid.Row="1" VerticalAlignment="Top" Click="button_return_Click" FontSize="30" Height="0" Width="108"/>
-        <Button x:Name="button_download" Content="Download" HorizontalAlignment="Left" Margin="202,689,0,-85" Grid.Row="1" VerticalAlignment="Top" FontSize="30" Grid.Column="1" Height="0" Width="156"/>
-        <TextBox x:Name="textRevenue" HorizontalAlignment="Left" Margin="10,691,0,-119" TextWrapping="Wrap" Text="Revenue:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="32" Width="96"/>
-        <TextBox x:Name="outputRevenue" HorizontalAlignment="Left" Margin="111,691,0,-119" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" PlaceholderText="$" Height="32" Width="64"/>
-        <TextBox x:Name="textTotalItems" HorizontalAlignment="Left" Margin="427,689,0,-117" TextWrapping="Wrap" Text="Total Items:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" RenderTransformOrigin="-0.667,0.729" Height="32" Width="117"/>
-        <TextBox x:Name="outputTotalItems" HorizontalAlignment="Left" Margin="562,689,0,-117" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" PlaceholderText="" Height="32" Width="64"/>
+        <Button x:Name="button_print" Content="Button" HorizontalAlignment="Left" Margin="37,778,0,0" Grid.Row="1" VerticalAlignment="Top" Click="PrintButtonClick" FontSize="30" Grid.Column="2" Height="87" Width="152"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="95,36,0,0" TextWrapping="Wrap" Text="Sales Report" VerticalAlignment="Top" FontSize="60" Height="80" Width="327" Grid.Column="1"/>
+        <TextBox x:Name="textPaymentSummary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Payment Summary:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="35" Width="186" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textPaymentSummary_Copy" HorizontalAlignment="Left" Margin="219,13,0,0" TextWrapping="Wrap" Text="to" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="35" Width="64" Grid.Column="1"/>
+        <CalendarDatePicker x:Name="dateFrom" HorizontalAlignment="Left" Margin="100,13,0,0" Grid.Row="1" VerticalAlignment="Top" PlaceholderText="from" FontSize="20" CalendarViewDayItemChanging="dateFrom_CalendarViewDayItemChanging" DateChanged="dateFrom_DateChanged" Height="32" Width="76" Grid.Column="1"/>
+        <CalendarDatePicker x:Name="dateTo" HorizontalAlignment="Left" Margin="273,13,0,0" Grid.Row="1" VerticalAlignment="Top" PlaceholderText="to" DateChanged="dateTo_DateChanged" Height="32" Width="58" Grid.Column="1"/>
+        <TextBox x:Name="textbox_listitems" HorizontalAlignment="Left" Margin="36,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="351" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="label_items" HorizontalAlignment="Left" Margin="36,93,0,0" TextWrapping="Wrap" Text="Items" VerticalAlignment="Top" Width="351" Height="40" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="label_quantity" HorizontalAlignment="Left" Margin="451,93,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top" Width="141" Height="40" FontSize="20" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="451,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="141" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="296,93,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="141" Height="40" FontSize="20" AcceptsReturn="True" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="296,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="141" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="button_return" Content="Return" HorizontalAlignment="Left" Margin="36,778,0,0" Grid.Row="1" VerticalAlignment="Top" Click="button_return_Click" FontSize="30" Height="0" Width="108" Grid.ColumnSpan="2"/>
+        <Button x:Name="button_download" Content="Download" HorizontalAlignment="Left" Margin="202,689,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="30" Grid.Column="2" Height="0" Width="156"/>
+        <TextBox x:Name="textRevenue" HorizontalAlignment="Left" Margin="10,691,0,0" TextWrapping="Wrap" Text="Revenue:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="32" Width="96"/>
+        <TextBox x:Name="outputRevenue" HorizontalAlignment="Left" Margin="0,691,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" PlaceholderText="$" Height="32" Width="64" Grid.Column="1"/>
+        <TextBox x:Name="textTotalItems" HorizontalAlignment="Left" Margin="316,689,0,0" TextWrapping="Wrap" Text="Total Items:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" RenderTransformOrigin="-0.667,0.729" Height="32" Width="117" Grid.Column="1"/>
+        <TextBox x:Name="outputTotalItems" HorizontalAlignment="Left" Margin="451,689,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" PlaceholderText="" Height="32" Width="64" Grid.Column="1"/>
 
     </Grid>
 </Page>

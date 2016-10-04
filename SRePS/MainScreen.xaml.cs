@@ -55,5 +55,10 @@ namespace SRePS
         {
             Frame.Navigate(typeof(PageToPrint));
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PageToPrintLowStock));
+        }
     }
 }
