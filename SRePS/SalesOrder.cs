@@ -128,23 +128,18 @@ namespace SRePS
             return;
         }
 
-        public void UpdateStockText(RetrieveItems s, string item_name, int sold)
-        { 
-                //StreamWriter writer;
-                //FileStream fs = new FileStream(@"items.txt", FileMode.Open, FileAccess.Write);
-                //writer = new StreamWriter(fs);
+        public void UpdateStockText(RetrieveItems i)
+        {
+            List<StockItems> _stockList = i.getList();
+            StreamWriter writer;
+            FileStream fs = new FileStream(@"items.txt", FileMode.Open, FileAccess.Write);
+            writer = new StreamWriter(fs);
 
-                //foreach (StockItems s in MainScreen.stockItemsList)
-                //{
-                //    if (s.item_name == item.item_name)
-                //    {
-                //        if (s.item_stock - Convert.ToInt32(item.item_quantity) < 0)
-                //        {
-                //            writer.Dispose();
-                //        }
-                //        writer.WriteLine(item_name + " " + s.item_price + " " + s.item_stock + " " + s.item_stock_threshold);
-                //}
-                //writer.Dispose();
+            foreach (StockItems s in _stockList)
+            {
+                writer.WriteLine(s.item_name + " " + s.item_price + " " + s.item_stock + " " + s.item_stock_threshold);
+            }
+            writer.Dispose();
         }
     }
 

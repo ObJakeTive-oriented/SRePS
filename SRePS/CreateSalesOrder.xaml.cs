@@ -16,7 +16,6 @@ namespace SRePS
     {
         SalesOrder salesOrder = new SalesOrder();
         SalesOrderInfo current_so = new SalesOrderInfo();
-        List<Items> _itemsList = new List<Items>();
         List<StockItems> _stockList = new List<StockItems>();
         ErrorLogging errorObject = new ErrorLogging();
         UserLogging userLog = new UserLogging();
@@ -90,14 +89,15 @@ namespace SRePS
                     {
                         textboxNotification.Text =  item_name + " is below threshold\nIt's current stock: " + getitems.ReturnStockLevel(item_name);
                     }
-                    else
-                    {
-                        textbox_error.Text = "Please enter a number into the quantity field!";
-                        return;
-                    }
-                    dropdown_item.SelectedItem = "";
+                    //else
+                    //{
+                    //    textbox_error.Text = "Please enter a number into the quantity field!";
+                    //    return;
+                    //}
+                    //dropdown_item.SelectedItem = "";
                     textbox_quantity.Text = "";
                     textbox_error.Text = "";
+                    salesOrder.UpdateStockText(getitems);
                 }
                 else
                 {
