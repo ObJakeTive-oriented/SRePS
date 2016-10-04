@@ -19,19 +19,19 @@ using Windows.UI.Xaml.Printing;
 
 namespace SRePS
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class PageToPrint : Page
     {
         private PrintManager printMan;
         private PrintDocument printDoc;
         private IPrintDocumentSource printDocSource;
+        UserLogging userLog = new UserLogging();
         List<SalesOrderInfo> salesOrderList = new List<SalesOrderInfo>();
 
         public PageToPrint()
         {
             this.InitializeComponent();
+            string ul = "Entered printing page";
+            userLog.Log(ul);
             button_print.Content = "Print";
         }
 
@@ -57,6 +57,8 @@ namespace SRePS
 
         private async void PrintButtonClick(object sender, RoutedEventArgs e)
         {
+            string ul = "Pressed printing button";
+            userLog.Log(ul);
             if (PrintManager.IsSupported())
             {
                 try
@@ -259,6 +261,8 @@ namespace SRePS
 
         private void button_return_Click(object sender, RoutedEventArgs e)
         {
+            string ul = "Returnig from printing.";
+            userLog.Log(ul);
             printMan.PrintTaskRequested -= PrintTaskRequested;
             printDoc.Paginate -= Paginate;
             printDoc.GetPreviewPage -= GetPreviewPage;

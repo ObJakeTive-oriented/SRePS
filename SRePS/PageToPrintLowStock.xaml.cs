@@ -24,6 +24,7 @@ namespace SRePS {
         private PrintManager printMan;
         private PrintDocument printDoc;
         private IPrintDocumentSource printDocSource;
+        UserLogging userLog = new UserLogging();
 
         public PageToPrintLowStock()
         {
@@ -32,6 +33,7 @@ namespace SRePS {
 
         private async void btn_Print_Click(object sender, RoutedEventArgs e)
         {
+            userLog.Log("Printing low stock report");
             if (PrintManager.IsSupported())
             {
                 try
@@ -45,7 +47,7 @@ namespace SRePS {
                     ContentDialog noPrintingDialog = new ContentDialog()
                     {
                         Title = "Printing error",
-                        Content = "\nSorry, printing can' t proceed at this time.",
+                        Content = "\nSorry, printing can't proceed at this time.",
                         PrimaryButtonText = "OK"
                     };
                     await noPrintingDialog.ShowAsync();
@@ -154,6 +156,7 @@ namespace SRePS {
 
         private void btn_Generate_Click(object sender, RoutedEventArgs e)
         {
+            userLog.Log("Generated report");
             string quantity = txt_Quantity.Text;
             int OutputQuantity;
                 if (int.TryParse(quantity, out OutputQuantity))

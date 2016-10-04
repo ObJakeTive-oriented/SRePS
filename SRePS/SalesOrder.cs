@@ -42,7 +42,6 @@ namespace SRePS
                     itemid++;
                     output += "<item item=\"" + itemid.ToString() + "\">\n";
                     output += "<item>" + item.item_name + "</item>\n";
-                    //output += "<price>" + MainScreen.stockItemsList.(itemid.ToString()).ToString();
                     output += "<quantity>" + item.item_quantity + "</quantity>\n";
                     output += "</item>\n";
                 }

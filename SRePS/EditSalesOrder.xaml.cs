@@ -59,6 +59,8 @@ namespace SRePS
                 dropdown_items.Items.Add(i.item_name);
             }
             currentMode = "edit";
+            string ul = "Editing item";
+            userLog.Log(ul);
         }
 
         private void button_add_Click(object sender, RoutedEventArgs e)
@@ -71,6 +73,8 @@ namespace SRePS
                 dropdown_items.Items.Add(i.item_name);
             }
             currentMode = "add";
+            string ul = "Add item button click";
+            userLog.Log(ul);
         }
 
         private SalesOrderInfo getSalesOrder(string id)
@@ -153,7 +157,7 @@ namespace SRePS
                     {
                         if(i.item_name == itemName)
                         {
-                            string ul = "Edited quantity of6" + itemName;
+                            string ul = "Edited quantity of" + itemName;
                             userLog.Log(ul);
                             oldQuantity = Convert.ToInt32(i.item_quantity);
                             i.item_quantity = Convert.ToDouble(quantity);
