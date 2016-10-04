@@ -18,6 +18,6 @@
         <TextBox x:Name="outputTotalItems" HorizontalAlignment="Left" Margin="562,805,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" PlaceholderText="" Height="32" Width="64"/>
         <Button x:Name="btn_Generate" Content="Generate" HorizontalAlignment="Left" Margin="324,128,0,0" VerticalAlignment="Top" Click="btn_Generate_Click"/>
         <Button x:Name="btn_Print" Content="Print" HorizontalAlignment="Left" Margin="443,128,0,0" VerticalAlignment="Top" Click="btn_Print_Click"/>
-
+        <Button x:Name="button" Content="Return" HorizontalAlignment="Left" Margin="520,129,0,0" VerticalAlignment="Top" Click="button_Click"/>
     </Grid>
 </Page>

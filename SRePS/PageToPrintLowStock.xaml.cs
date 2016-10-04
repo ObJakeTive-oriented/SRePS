@@ -182,5 +182,16 @@ namespace SRePS {
                 }
             }
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            string ul = "Returnig from low stock printing.";
+            userLog.Log(ul);
+            printMan.PrintTaskRequested -= PrintTaskRequested;
+            printDoc.Paginate -= Paginate;
+            printDoc.GetPreviewPage -= GetPreviewPage;
+            printDoc.AddPages -= AddPages;
+            Frame.Navigate(typeof(MainScreen));
+        }
     }
 }

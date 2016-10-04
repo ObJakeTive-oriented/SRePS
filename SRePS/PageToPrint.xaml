@@ -17,7 +17,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button x:Name="button_print" Content="Button" HorizontalAlignment="Left" Margin="37,778,0,0" Grid.Row="1" VerticalAlignment="Top" Click="PrintButtonClick" FontSize="30" Grid.Column="2" Height="87" Width="152"/>
+        <Button x:Name="button_print" Content="Button" HorizontalAlignment="Left" Margin="599,671,0,0" Grid.Row="1" VerticalAlignment="Top" Click="PrintButtonClick" FontSize="30" Grid.Column="1" Height="87" Width="152"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="95,36,0,0" TextWrapping="Wrap" Text="Sales Report" VerticalAlignment="Top" FontSize="60" Height="80" Width="327" Grid.Column="1"/>
         <TextBox x:Name="textPaymentSummary" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Payment Summary:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="35" Width="186" Grid.ColumnSpan="2"/>
         <TextBox x:Name="textPaymentSummary_Copy" HorizontalAlignment="Left" Margin="219,13,0,0" TextWrapping="Wrap" Text="to" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="35" Width="64" Grid.Column="1"/>
@@ -29,12 +29,11 @@
         <TextBox x:Name="textbox_listquantity" HorizontalAlignment="Left" Margin="451,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="141" Grid.Row="1" Grid.Column="1"/>
         <TextBox x:Name="label_unitprice" HorizontalAlignment="Left" Margin="296,93,0,0" TextWrapping="Wrap" Text="Unit Price" VerticalAlignment="Top" Width="141" Height="40" FontSize="20" AcceptsReturn="True" Grid.Row="1" Grid.Column="1"/>
         <TextBox x:Name="textbox_listunitprice" HorizontalAlignment="Left" Margin="296,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="502" Width="141" Grid.Row="1" Grid.Column="1"/>
-        <Button x:Name="button_return" Content="Return" HorizontalAlignment="Left" Margin="40,778,0,-29" Grid.Row="1" VerticalAlignment="Top" Click="button_return_Click" FontSize="30" Height="0" Width="108" Grid.ColumnSpan="2"/>
+        <Button x:Name="button_return" Content="Return" HorizontalAlignment="Left" Margin="606,611,0,0" Grid.Row="1" VerticalAlignment="Top" Click="button_return_Click" FontSize="30" Height="51" Width="108" Grid.Column="1"/>
         <Button x:Name="button_download" Content="Download" HorizontalAlignment="Left" Margin="202,689,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="30" Grid.Column="2" Height="0" Width="156"/>
         <TextBox x:Name="textRevenue" HorizontalAlignment="Left" Margin="10,691,0,0" TextWrapping="Wrap" Text="Revenue:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" Height="32" Width="96"/>
         <TextBox x:Name="outputRevenue" HorizontalAlignment="Left" Margin="0,691,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" PlaceholderText="$" Height="32" Width="64" Grid.Column="1"/>
         <TextBox x:Name="textTotalItems" HorizontalAlignment="Left" Margin="316,689,0,0" TextWrapping="Wrap" Text="Total Items:" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" RenderTransformOrigin="-0.667,0.729" Height="32" Width="117" Grid.Column="1"/>
         <TextBox x:Name="outputTotalItems" HorizontalAlignment="Left" Margin="451,689,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" BorderThickness="0" Grid.Row="1" PlaceholderText="" Height="32" Width="64" Grid.Column="1"/>
-
     </Grid>
 </Page>

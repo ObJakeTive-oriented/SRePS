@@ -15,7 +15,6 @@ namespace SRePS
         {
             StreamReader reader;
             FileStream fs = new FileStream(@"items.txt", FileMode.Open, FileAccess.Read);
-            // File.SetAttributes("salesorder.xml", FileAttributes.Normal);
             reader = new StreamReader(fs);
             try
             {
